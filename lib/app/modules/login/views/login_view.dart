@@ -10,7 +10,7 @@ import '../../../data/utils/app_colors.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
-  const LoginView({Key? key}) : super(key: key);
+  const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -84,19 +84,26 @@ class LoginView extends GetView<LoginController> {
                 const SizedBox(
                   height: 24,
                 ),
-                const Align(
+                Align(
                   alignment: Alignment.centerRight,
-                  child: CustomText(
-                    title: 'Forgot password?',
-                    weight: FontWeight.w500,
-                    size: 14,
-                    color: AppColors.appOrange,
+                  child: GestureDetector(
+                    onTap: () {
+                      Get.toNamed("/forgot-password");
+                    },
+                    child: const CustomText(
+                      title: 'Forgot password?',
+                      weight: FontWeight.w500,
+                      size: 14,
+                      color: AppColors.appOrange,
+                    ),
                   ),
                 ),
                 const SizedBox(
                   height: 24,
                 ),
-                GeneralButton(buttonText: "Sign In", onPressed: () {}),
+                GeneralButton(buttonText: "Sign In", onPressed: () {
+                  Get.offAllNamed("/home");
+                }),
                 const SizedBox(
                   height: 24,
                 ),
@@ -143,7 +150,7 @@ class LoginView extends GetView<LoginController> {
                   height: 32,
                 ),
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     Get.toNamed("/register");
                   },
                   child: const Row(
