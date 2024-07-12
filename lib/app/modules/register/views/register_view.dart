@@ -179,21 +179,26 @@ class RegisterView extends GetView<RegisterController> {
                 const SizedBox(
                   height: 32,
                 ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CustomText(
-                      title: "Already have an account? ",
-                      weight: FontWeight.w500,
-                      size: 14,
-                    ),
-                    CustomText(
-                      title: "Sign In",
-                      weight: FontWeight.w500,
-                      size: 14,
-                      color: AppColors.appOrange,
-                    ),
-                  ],
+                GestureDetector(
+                  onTap: (){
+                    Get.toNamed("/login");
+                  },
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CustomText(
+                        title: "Already have an account? ",
+                        weight: FontWeight.w500,
+                        size: 14,
+                      ),
+                      CustomText(
+                        title: "Sign In",
+                        weight: FontWeight.w500,
+                        size: 14,
+                        color: AppColors.appOrange,
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 12,)
               ],
