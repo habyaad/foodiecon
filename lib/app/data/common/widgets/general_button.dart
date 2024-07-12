@@ -46,37 +46,14 @@ class GeneralButton extends StatelessWidget {
           // border: Border.all(width: 3, color: AppColor.primary)
           //border: Border.all(width: 3, color: AppColor.primary)
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            //prefixIcon ?? Container(),
-            //horizontalSpaceSmall,
-            /*CustomText(
-              title: buttonText,
-              size: fontSize ?? 15,
-              weight: fontWeight ?? FontWeight.w700,
-              color: textColor ?? Colors.white,),*/
-            icon != null
-                ? Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [icon as Widget],
-                  )
-                : const SizedBox(),
-            /*Visibility(
-              visible: prefixIconPath != null,
-              replacement: const SizedBox(),
-              child: SvgPicture.asset(prefixIconPath!),
-            ),*/
-            SizedBox(width: icon != null ? 6 : 0),
-            Text(
-              buttonText,
-              style: TextStyle(
-                  color: textColor ?? Colors.white,
-                  fontSize: fontSize ?? 15,
-                  fontWeight: fontWeight ?? FontWeight.w700),
-            ),
-          ],
+        child: Center(
+          child: Text(
+            buttonText,
+            style: TextStyle(
+                color: textColor ?? Colors.white,
+                fontSize: fontSize ?? 15,
+                fontWeight: fontWeight ?? FontWeight.w700),
+          ),
         ),
       ),
     );
